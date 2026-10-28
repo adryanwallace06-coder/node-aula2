@@ -1,23 +1,33 @@
-const pet1= {
+const numeros = [15, 258, 1, 64]
+
+const pets = [
+    {
     nome: "Alfredo",
     tutor: "Adryan Wallace",
     idade: 5,
     vacinado: true,
-};
+    },
 
-const pet2 = {
+{
+    nome: "Alfredo",
+    tutor: "Adryan Wallace",
+    idade: 5,
+    vacinado: true,
+},
+
+ {
     nome: "Belinha",
     tutor: "Ana Maria",
     idade: 8,
     vacinado: false,
-};
+},
 
-const pet3 = {
+ {
     nome: "Rex",
     tutor: "Joana Queiroz",
     idade: 2,
     vacinado: true,
-};
+},
 
-
+]
 
