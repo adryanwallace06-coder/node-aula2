@@ -12,6 +12,11 @@ app.get("/:nome", (requisicao, resposta) =>{
     const nomeInformado = requisicao.params.nome.toLowerCase();
     const pet = pets.find((infoPet) => infoPet.nome === nomeInformado);
 
+    if (pet === undefined) {
+        resposta.status(404).send("Não existe o Pet informado.")
+    }
+
+    
     resposta.send(pet);
 });
 
