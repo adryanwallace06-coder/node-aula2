@@ -1,5 +1,3 @@
-const numeros = [15, 258, 1, 64]
-
 const pets = [
     {
     nome: "Alfredo",
