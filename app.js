@@ -2,6 +2,7 @@ import express from 'express';
 import pets from "./pets.js";
 
 const app = express();
+app.use(express.json());
 const port = 3000;
 
 app.get('/', (requisicao, resposta) =>{
@@ -16,9 +17,21 @@ app.get("/:nome", (requisicao, resposta) =>{
         resposta.status(404).send("Não existe o Pet informado.")
     }
 
-    
     resposta.send(pet);
 });
+
+app.put("/:nome", (req, res) => {
+    const nomeInformado = req.params.nome.toLowerCase();
+    const nomeSelecionado = pets.find((pet) => pet.nome === nomeInformado);
+    const campos = Object.keys(req.body);
+
+    for (let campo of campos) {
+        nomeSelecionado[campo] = req.body[campo]
+    }
+
+    res.status(200).send(nomeSelecionado);
+});
+
 
 app.get("/:tutor", (requisicao, resposta) =>{
     const tutorInformado = requisicao.params.tutor.toLowerCase();
