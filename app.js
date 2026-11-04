@@ -32,6 +32,13 @@ app.put("/:nome", (req, res) => {
     res.status(200).send(nomeSelecionado);
 });
 
+app.post('/', (req, res) => {
+    const novoPet = req.body;
+    pets.push(novoPet);
+    res.status(208).send(novoPet);
+});
+
+
 
 app.get("/:tutor", (requisicao, resposta) =>{
     const tutorInformado = requisicao.params.tutor.toLowerCase();
